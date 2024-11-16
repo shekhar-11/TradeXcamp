@@ -33,3 +33,16 @@ app.listen(3000, () => {
 });
 
 app.use("/api/auth", authRouter);
+
+//middleware
+app.use((err, req, res, next) => {
+  //err is the error from input ans NEXT is to go to the next middleware
+  const statusCode = err.statusCode || 500; //500 = internal server error
+  const message = err.message || "Internal Server Error";
+  return res.status(statusCode).json({
+    //these all are returned in the error message
+    success: false,
+    statusCode: statusCode,
+    message: message,
+  });
+});
