@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 // import dotenv from "dotenv";
 import dotenv from "dotenv";
-
+import cookieParser from "cookie-parser";
 // Load the .env file from the root
 dotenv.config({ path: "../.env" });
 
@@ -20,6 +20,8 @@ mongoose
 const app = express();
 
 app.use(express.json()); //it allows the user to send the json format input
+app.use(cookieParser());
+
 app.get("/", (req, res) => {
   res.send({ message: "Hello" });
 });
