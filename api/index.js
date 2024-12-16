@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 // Load the .env file from the root
 dotenv.config({ path: "../.env" });
+import listingRouter from "./routes/listing.route.js";
 
 // dotenv.config();
 import authRouter from "./routes/auth.route.js";
@@ -35,6 +36,8 @@ app.listen(3000, () => {
 });
 
 app.use("/api/auth", authRouter);
+
+app.use("/api/listing", listingRouter);
 
 //middleware
 app.use((err, req, res, next) => {
