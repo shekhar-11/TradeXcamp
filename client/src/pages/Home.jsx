@@ -33,6 +33,7 @@ export default function Home() {
         console.log(error);
       }
     };
+
     const fetchSaleListings = async () => {
       try {
         const res = await fetch('/api/listing/get?type=sale&limit=4');
@@ -66,6 +67,7 @@ export default function Home() {
           Let's get started...
         </Link>
       </div>
+
       {/* swiper */}
       <Swiper navigation>
         {offerListings &&
@@ -83,7 +85,9 @@ export default function Home() {
             </SwiperSlide>
           ))}
       </Swiper>
+
       {/* listing results for offer, sale and rent */}
+
       <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
         {offerListings && offerListings.length > 0 && (
           <div className=''>
