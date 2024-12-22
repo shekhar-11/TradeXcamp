@@ -6,13 +6,14 @@ import { useSelector } from 'react-redux';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/bundle';
 import {
-  FaBath,
-  FaBed,
-  FaChair,
-  FaMapMarkedAlt,
+  
   FaMapMarkerAlt,
-  FaParking,
+  
   FaShare,
+  FaLayerGroup ,
+  FaHourglass ,
+  FaRecycle ,
+  FaShieldAlt 
 } from 'react-icons/fa';
 import Contact from '../components/Contact';
 
@@ -116,13 +117,13 @@ export default function Listing() {
             </p>
             <ul className='text-green-900 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6'>
               <li className='flex items-center gap-1 whitespace-nowrap '>
-                <FaBed className='text-lg' />
+                <FaLayerGroup  className='text-lg' />
                 {listing.bedrooms > 1
                   ? `${listing.bedrooms} Quantity `
                   : `${listing.bedrooms} Quantity `}
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap '>
-                <FaBath className='text-lg' />
+                <FaHourglass  className='text-lg' />
                 {listing.bathrooms > 1
                   ? `${listing.bathrooms} Age(months) `
                   : `${listing.bathrooms} Age(months) `}
@@ -133,14 +134,14 @@ export default function Listing() {
               </li> */}
               {listing.parking && (
   <li className='flex items-center gap-1 whitespace-nowrap'>
-    <FaParking className='text-lg' />
+    <FaShieldAlt  className='text-lg' />
     Warranty
   </li>
 )}
 
 
               <li className='flex items-center gap-1 whitespace-nowrap '>
-                <FaChair className='text-lg' />
+                <FaRecycle  className='text-lg' />
                 {listing.furnished ? 'Refurbished' : 'Serviced'}
               </li>
             </ul>
@@ -149,7 +150,7 @@ export default function Listing() {
                 onClick={() => setContact(true)}
                 className='bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 p-3'
               >
-                Contact landlord
+                Contact Owner
               </button>
             )}
             {contact && <Contact listing={listing} />}

@@ -196,7 +196,7 @@ export default function Search() {
                 onChange={handleChange}
                 checked={sidebardata.parking}
               />
-              <span>Parking</span>
+              <span>Warranty</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -206,7 +206,7 @@ export default function Search() {
                 onChange={handleChange}
                 checked={sidebardata.furnished}
               />
-              <span>Furnished</span>
+              <span>Refurbished</span>
             </div>
           </div>
           <div className='flex items-center gap-2'>
