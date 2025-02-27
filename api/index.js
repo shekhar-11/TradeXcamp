@@ -22,14 +22,14 @@ const app = express();
 
 app.use(express.json()); //it allows the user to send the json format input
 app.use(cookieParser());
-
+import path from 'path';
 app.get("/", (req, res) => {
   res.send({ message: "Hello" });
 });
 app.get("/", (req, res) => {
   res.send("Hello WOrld");
 });
-
+ const __dirname = path.resolve();
 app.use("/api/user", userRouter);
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
@@ -38,6 +38,12 @@ app.listen(3000, () => {
 app.use("/api/auth", authRouter);
 
 app.use("/api/listing", listingRouter);
+
+app.use(express.static(path.join(__dirname, '/client/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+})
 
 //middleware
 app.use((err, req, res, next) => {
