@@ -6,7 +6,7 @@ const firebaseConfig = {
   projectId: "newproject-89979",
   storageBucket: "newproject-89979.firebasestorage.app",
   messagingSenderId: "436933107238",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  appId:"1:436933107238:web:fc128a12807c86728350e7",
 };
 
 
