@@ -4,10 +4,10 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 // Load the .env file from the root
-dotenv.config({ path: "../.env" });
+// dotenv.config({ path: "../.env" });
 import listingRouter from "./routes/listing.route.js";
 
-// dotenv.config();
+dotenv.config();
 import authRouter from "./routes/auth.route.js";
 
 import userRouter from "./routes/user.route.js";

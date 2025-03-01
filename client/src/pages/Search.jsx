@@ -84,11 +84,12 @@ export default function Search() {
       e.target.id === 'furnished' ||
       e.target.id === 'offer'
     ) {
-      setSidebardata({
-        ...sidebardata,
-        [e.target.id]:
-          e.target.checked || e.target.checked === 'true' ? true : false,
-      });
+      
+        setSidebardata({
+          ...sidebardata,
+          [e.target.id]:
+            e.target.checked || e.target.checked === 'true' ? true : false,
+        });
     }
 
     if (e.target.id === 'sort_order') {
