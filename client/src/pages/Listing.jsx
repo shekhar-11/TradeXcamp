@@ -118,21 +118,21 @@ export default function Listing() {
             <ul className='text-green-900 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6'>
               <li className='flex items-center gap-1 whitespace-nowrap '>
                 <FaLayerGroup  className='text-lg' />
-                {listing.bedrooms > 1
-                  ? `${listing.bedrooms} Quantity `
-                  : `${listing.bedrooms} Quantity `}
+                {listing.quantity > 1
+                  ? `${listing.quantity} Quantity `
+                  : `${listing.quantity} Quantity `}
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap '>
                 <FaHourglass  className='text-lg' />
-                {listing.bathrooms > 1
-                  ? `${listing.bathrooms} Age(months) `
-                  : `${listing.bathrooms} Age(months) `}
+                {listing.age > 1
+                  ? `${listing.age} Age(months) `
+                  : `${listing.age} Age(months) `}
               </li>
               {/* <li className='flex items-center gap-1 whitespace-nowrap '>
                 <FaParking className='text-lg' />
                 {listing.parking ? 'Warranty' : 'No Warranty'}
               </li> */}
-              {listing.parking && (
+              {listing.warranty && (
   <li className='flex items-center gap-1 whitespace-nowrap'>
     <FaShieldAlt  className='text-lg' />
     Warranty
@@ -142,7 +142,7 @@ export default function Listing() {
 
               <li className='flex items-center gap-1 whitespace-nowrap '>
                 <FaRecycle  className='text-lg' />
-                {listing.furnished ? 'Refurbished' : 'Serviced'}
+                {listing.refurbished ? 'Refurbished' : 'Serviced'}
               </li>
             </ul>
             {currentUser && listing.userRef !== currentUser._id && !contact && (
