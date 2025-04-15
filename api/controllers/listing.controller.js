@@ -69,14 +69,14 @@ export const getListing = async (req, res, next) => {
 //     if (offer === undefined || offer === 'false') {
 //       offer = { $in: [false, true] };
 //     }
-//     let furnished = req.query.furnished;
-//     if (furnished === undefined || furnished === 'false') {
-//       furnished = { $in: [false, true] };
+//     let refurbished = req.query.refurbished;
+//     if (refurbished === undefined || refurbished === 'false') {
+//       refurbished = { $in: [false, true] };
 //     }
 
-//     let parking = req.query.parking;
-//     if (parking === undefined || parking === 'false') {
-//       parking = { $in: [false, true] };
+//     let warranty = req.query.warranty;
+//     if (warranty === undefined || warranty === 'false') {
+//       warranty = { $in: [false, true] };
 //     }
 //     let type = req.query.type;
 //     if (type === undefined || type === 'all') {
@@ -88,8 +88,8 @@ export const getListing = async (req, res, next) => {
 //     const listings = await Listing.find({
 //       name: { $regex: searchTerm, $options: 'i' },
 //       offer,
-//       furnished,
-//       parking,
+//       refurbished,
+//       warranty,
 //       type,
 //     })
 //       .sort({ [sort]: order })
@@ -108,8 +108,8 @@ export const getListings = async (req, res, next) => {
     const startIndex = parseInt(req.query.startIndex) || 0;
 
     let offer = req.query.offer === 'true' ? true : req.query.offer === 'false' ? false : { $in: [false, true] };
-    let furnished = req.query.furnished === 'true' ? true : req.query.furnished === 'false' ? false : { $in: [false, true] };
-    let parking = req.query.parking === 'true' ? true : req.query.parking === 'false' ? false : { $in: [false, true] };
+    let refurbished = req.query.refurbished === 'true' ? true : req.query.refurbished === 'false' ? false : { $in: [false, true] };
+    let warranty = req.query.warranty === 'true' ? true : req.query.warranty === 'false' ? false : { $in: [false, true] };
     let type = req.query.type && ['sale', 'rent'].includes(req.query.type) ? req.query.type : { $in: ['sale', 'rent'] };
 
     const searchTerm = req.query.searchTerm || '';
@@ -121,8 +121,8 @@ export const getListings = async (req, res, next) => {
     const listings = await Listing.find({
       name: { $regex: searchTerm, $options: 'i' },
       offer,
-      furnished,
-      parking,
+      refurbished,
+      warranty,
       type,
     })
       .sort({ [sort]: order })
