@@ -23,12 +23,12 @@ const app = express();
 app.use(express.json()); //it allows the user to send the json format input
 app.use(cookieParser());
 import path from 'path';
-app.get("/", (req, res) => {
-  res.send({ message: "Hello" });
-});
-app.get("/", (req, res) => {
-  res.send("Hello WOrld");
-});
+// app.get("/", (req, res) => {
+//   res.send({ message: "Hello" });
+// });
+// app.get("/", (req, res) => {
+//   res.send("Hello WOrld");
+// });
  const __dirname = path.resolve();
 app.use("/api/user", userRouter);
 app.listen(3000, () => {
